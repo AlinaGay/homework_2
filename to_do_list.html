@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TO-DO List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+
+<body>
+<br /><br />
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>TO-DO List</h3>
+        </div>
+    </div><!-- end of row -->
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="taskData">Name of task</label>
+                <input type="text" class="form-control" id="taskData" aria-describedby="taskDataHelp" placeholder="Task">
+                <small id="taskDataHelp" class="form-text text-muted">Please, enter a task </small>
+            </div>
+
+            <div class="form-group">
+                <label for="reminderData">When is remind?</label>
+                <div class="row">
+                    <div class="col-md-11">
+                        <input type="text" class="form-control" id="reminderData" aria-describedby="reminderDataHelp" placeholder="Remind">
+                        <small id="reminderDataHelp" class="form-text text-muted">Please, enter date and time of task</small>
+                    </div>
+                    <div class="col-xs-1">
+                        <a href="#" class="btn btn-light"><i class="fa fa-calendar"></i></a>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="form-submit" class="btn btn-primary" onclick="add()">Add</button>
+        </div><!-- end of col-md-6 -->
+
+
+
+        <div class="col-md-6">
+
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h4 class="card-title">List of tasks:</h4>
+                    <p class="card-text">Tomorrow: <span id="tomDate"></span></p>
+                    <ul class="list-group">
+                        <li class="list-group-item"></li>
+                    </ul>
+                    <br />
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div> <!-- end col-md-6-->
+    </div> <!-- end of row -->
+    <div class="row">
+
+
+        <div class="col-md-6">
+
+            <div id="main_content"></div>
+        </div> <!-- end col-md-6-->
+
+
+
+    </div>
+</div>
+<script>
+
+
+    function echo(val) {
+// объявили функцию, которая добавляет val в html документ (тег с id=main_content)
+        var ob = document.getElementById('main_content');
+        ob.innerHTML = val;
+    }
+
+    var obj1 = {item: 5, color: 6};
+
+    console.log('items = ', 5 + 10) // => 15
+
+    function add() {
+            var task = document.getElementById('taskData').value;
+            var reminder = document.getElementById('reminderData').value;
+            console.log(reminder,' ', task);
+    }
+
+</script>
+</body>
+</html>
